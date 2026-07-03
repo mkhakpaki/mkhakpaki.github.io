@@ -8,6 +8,10 @@
     - Network: Ktor + Coil -> MusicBrainz, Cover Art Archive, fanart.tv
     - Google: Play services code scanner (QR join), Firebase (Crashlytics, Analytics, Cloud
       Messaging, Remote Config) - pre-covered ahead of the release that ships them
+    - Session sync transfers the CURRENT TRACK's full bytes host->clients (protocol FileOffer).
+      The "no lasting copy" wording in section 4 depends on clients decoding in memory and
+      deleting the decode temp file (AudioPlayer.prepare). Re-check that section if received
+      tracks ever get cached or persisted.
 -->
 <html lang="en">
 <head>
@@ -49,10 +53,10 @@
   <div class="summary-card">
     <p><strong>The short version:</strong></p>
     <ul>
-      <li>Your music files and library <strong>never leave your device</strong>. dodast reads them; it cannot upload, modify, or delete them.</li>
+      <li>Your music and library are <strong>never uploaded</strong> — dodast has no server and no cloud. Access to your files is read-only: the app cannot modify or delete them.</li>
       <li><strong>No accounts, no ads, no selling or sharing of data</strong> for advertising. Ever.</li>
       <li>The internet is used for two things: <strong>artwork lookups</strong> you can see, and <strong>crash/usage diagnostics</strong> (Google Firebase) described below.</li>
-      <li>Listening sessions sync <strong>directly between your own devices on your local network</strong> — no server in the middle.</li>
+      <li>Listening sessions sync <strong>directly between your devices on your local network</strong> — no server in the middle. That includes the music: the host device sends the current track straight to the devices that joined.</li>
     </ul>
   </div>
 
@@ -88,7 +92,7 @@
     <li><strong>Playback state</strong> — your queue, position, and settings, so the app can resume where you left off.</li>
     <li><strong>Artwork cache</strong> — embedded art extracted from your files and images downloaded during artwork lookups.</li>
   </ul>
-  <p>This data is excluded from Android's cloud backup, is never uploaded anywhere, and is deleted when you clear the app's storage or uninstall the app. Access to your audio files is <strong>read-only</strong>: dodast cannot modify or delete your music.</p>
+  <p>This data is excluded from Android's cloud backup, is never uploaded anywhere, and is deleted when you clear the app's storage or uninstall the app. Access to your audio files is <strong>read-only</strong>: dodast cannot modify or delete your music. The one thing that does travel between devices — the currently playing track during a listening session — goes only to devices you invite, and is described in <a href="#sessions">section 4</a>.</p>
 
   <h2 id="artwork">3. Artwork lookups over the internet</h2>
   <p>When a file has no embedded artwork, dodast looks the artwork up online during and after library scans. Three services are contacted, and what is sent to them is metadata from your own files' tags — never the files themselves:</p>
@@ -106,8 +110,9 @@
     <li>Your device <strong>advertises the session on your local network</strong> (via mDNS/Bonjour-style discovery) so other devices can find it. The advertisement includes a device/session name.</li>
     <li>If you show a <strong>QR code</strong> to let someone join, that code contains local connection details (such as your device's local network address). It is generated on your device.</li>
     <li>While in a session, devices exchange <strong>now-playing metadata</strong> (track titles, artists, timing) and <strong>playback commands</strong> directly with each other over your Wi-Fi.</li>
+    <li><strong>The music itself travels device-to-device.</strong> To keep every device in perfect sync, the host sends the current track — the audio file itself — directly to each joined device over your network. The receiving device uses it only to play the session: the audio is prepared in memory for playback, is not added to that device's music library, and no lasting copy of the file is kept.</li>
   </ul>
-  <p>None of this traffic is routed through the internet or any server of mine — there is no such server. It stays on your local network, which also means it is only as private as that network: on a shared or public Wi-Fi, other people on the same network could observe session traffic. Leaving a session (or closing the app) stops all of it.</p>
+  <p>None of this traffic is routed through the internet or any server of mine — there is no such server. It stays on your local network, which also means it is only as private as that network: on a shared or public Wi-Fi, other people on the same network could observe session traffic (including the transferred audio). Leaving a session (or closing the app) stops all of it.</p>
 
   <h2 id="qr">5. QR code scanning</h2>
   <p>Joining a session by QR code uses <strong>Google's code scanner</strong>, which runs inside Google Play services on your device — this is why dodast itself needs <strong>no camera permission</strong>. Scanning is processed on the device, and dodast receives only the decoded text of the code. Google Play services' own handling of data is governed by <a href="https://policies.google.com/privacy" rel="external">Google's Privacy Policy</a>.</p>
@@ -151,7 +156,7 @@
 
   <h2 id="never">8. What dodast never does</h2>
   <ul>
-    <li>Never uploads your music files or your library index anywhere.</li>
+    <li>Never uploads your music or your library index to the internet — the only place music ever goes is directly to devices you invite into a listening session, on your own network.</li>
     <li>Never modifies or deletes your files.</li>
     <li>Never shows ads or uses advertising SDKs.</li>
     <li>Never sells your data, or shares it with anyone for advertising or marketing.</li>
