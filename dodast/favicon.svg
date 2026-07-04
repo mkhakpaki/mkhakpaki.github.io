@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="dodast">
+  <defs>
+    <linearGradient id="dodBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141821"/>
+      <stop offset="1" stop-color="#0a0c10"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="26" fill="url(#dodBg)"/>
+  <g transform="translate(60 60) scale(0.82) translate(-60 -60)">
+    <g transform="translate(10 8.77)" fill="none">
+      <circle cx="50" cy="60" r="34.5" stroke="#24463E" stroke-width="2.4"/>
+      <circle cx="50" cy="60" r="27" stroke="#5B8CFF" stroke-width="9.45"/>
+      <path d="M77 1.95V70.8" stroke="#5B8CFF" stroke-width="9.45" stroke-linecap="round"/>
+      <circle cx="50" cy="60" r="6.48" fill="#4CB4EF"/>
+    </g>
+  </g>
+</svg>
