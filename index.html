@@ -74,9 +74,9 @@
   "@type": "ItemList",
   "name": "Apps by Mohammad Khakpaki",
   "itemListElement": [
-    {"@type": "SoftwareApplication", "name": "Jarful: Fruit Merge Puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge"},
+    {"@type": "SoftwareApplication", "name": "Mediqation — Pill Reminder", "applicationCategory": "HealthApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.5","bestRating":"5"}, "url": "https://play.google.com/store/apps/details?id=com.mediqation.android"},
     {"@type": "SoftwareApplication", "name": "dodast", "applicationCategory": "MultimediaApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.dodast"},
-    {"@type": "SoftwareApplication", "name": "Mediqation — Pill Reminder", "applicationCategory": "HealthApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mediqation.android"}
+    {"@type": "SoftwareApplication", "name": "Jarful: Fruit Merge Puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge"}
   ]
 }
 </script>
@@ -115,7 +115,7 @@ nav.scrolled{background:rgba(11,13,16,.82);border-bottom-color:var(--border)}
 @media(max-width:900px){.nav-links{position:fixed;inset:64px 12px auto 12px;flex-direction:column;background:var(--bg-soft);border:1px solid var(--border);border-radius:16px;padding:12px;gap:4px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}.nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}.nav-links a{width:100%}.burger{display:block}}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 section{padding:clamp(58px,7vw,96px) 0;position:relative}
-#education{padding-top:clamp(16px,2.5vw,32px)}
+#personal{padding-top:clamp(16px,2.5vw,32px)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .eyebrow::before{content:'';width:26px;height:2px;background:var(--grad);border-radius:2px}
 .section-title{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.02em;margin-bottom:14px}
@@ -140,6 +140,14 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .stats-row{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,60px)}
 .stat .num{font-family:'Space Grotesk';font-size:clamp(26px,4vw,38px);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
 .stat .lbl{color:var(--faint);font-size:13.5px;margin-top:6px}
+/* stats stagger: row stays put, each stat pops in left-to-right */
+.stats-row.reveal{opacity:1;transform:none}
+.stats-row .stat{opacity:0;transform:translateY(22px) scale(.96);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.stats-row.in .stat{opacity:1;transform:none}
+.stats-row.in .stat:nth-child(1){transition-delay:.10s}
+.stats-row.in .stat:nth-child(2){transition-delay:.26s}
+.stats-row.in .stat:nth-child(3){transition-delay:.42s}
+.stats-row.in .stat:nth-child(4){transition-delay:.58s}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:start}
@@ -149,7 +157,7 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .about-card p:last-child{margin-bottom:0}
 .about-card strong{color:var(--text)}
 .info-list{list-style:none;display:flex;flex-direction:column;gap:16px}
-.info-list li{display:flex;gap:14px;align-items:flex-start}
+.info-list li{display:flex;gap:14px;align-items:center}
 .info-list .ic{width:38px;height:38px;flex:0 0 38px;border-radius:11px;display:grid;place-items:center;background:rgba(91,140,255,.12);font-size:18px}
 .info-list .ic svg{width:18px;height:18px;fill:var(--accent)}
 .info-list .k{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em}
@@ -177,7 +185,7 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .proj-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .proj-icon{width:60px;height:60px;border-radius:15px;overflow:hidden;border:1px solid var(--border);background:var(--bg-soft);flex:0 0 60px}
 .proj-icon img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:100px;border:1px solid var(--border);color:var(--muted)}
+.tag{display:inline-flex;align-items:center;gap:5px;line-height:1;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:100px;border:1px solid var(--border);color:var(--muted)}
 .tag.live{color:var(--accent-3);border-color:rgba(56,224,196,.3);background:rgba(56,224,196,.08)}
 .proj h3{font-size:22px;margin-bottom:6px}
 .proj .ptype{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:12px}
@@ -188,7 +196,10 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .proj p{color:var(--muted);font-size:15px;margin-bottom:18px;flex:1}
 .proj-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
 .proj-tech span{font-size:12px;padding:4px 10px;border-radius:8px;background:var(--bg-soft);border:1px solid var(--border);color:var(--faint)}
-.proj-links{display:flex;gap:10px;flex-wrap:wrap}
+.proj-links{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.gp-badge{display:inline-flex;align-items:center;transition:transform .2s,opacity .2s}
+.gp-badge img{height:52px;width:auto;display:block}
+.gp-badge:hover{transform:translateY(-2px);opacity:.88}
 .plink{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--accent);padding:9px 15px;border-radius:10px;border:1px solid var(--border);transition:.2s}
 .plink:hover{background:var(--accent);color:#0B0D10;border-color:var(--accent)}
 .plink.sec{color:var(--muted)}
@@ -213,6 +224,8 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .tl-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:2px}
 .tl-head h3{font-size:19px}
 .tl-co{color:var(--accent);font-weight:600}
+.colink{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.colink:hover{border-bottom-color:currentColor}
 .tl-loc{color:var(--faint);font-size:13px}
 .tl-date{margin-left:auto;font-size:13px;color:var(--faint);font-family:'Space Grotesk'}
 .tl-item > p{color:var(--muted);font-size:14.5px;margin-top:6px}
@@ -231,6 +244,37 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 @media(max-width:760px){.two-col{grid-template-columns:1fr}}
 .mini-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px}
 .mini-card h3{font-size:18px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.mc-text{color:var(--muted);font-size:15px;line-height:1.7}
+.oc-card{display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.oc-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:12px;border:1px solid var(--border)}
+/* photography slider gallery */
+.gallery-wrap{position:relative}
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;padding:4px 2px 16px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.gallery::-webkit-scrollbar{height:8px}
+.gallery::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
+.gallery::-webkit-scrollbar-track{background:transparent}
+.gallery figure{flex:0 0 auto;height:clamp(260px,42vw,360px);margin:0;scroll-snap-align:start;border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;border:1px solid var(--border);background:var(--bg-soft)}
+.gallery img{height:100%;width:auto;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gallery figure::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,13,16,.4));opacity:0;transition:.3s;pointer-events:none}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure:hover::after{opacity:1}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;background:rgba(11,13,16,.7);backdrop-filter:blur(8px);border:1px solid var(--border);color:var(--text);font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.2s;opacity:.9}
+.gal-nav:hover{background:var(--grad);color:#0B0D10;border-color:transparent;opacity:1}
+.gal-prev{left:-6px}
+.gal-next{right:-6px}
+.gal-nav.gal-hidden{opacity:0;pointer-events:none;transform:translateY(-50%) scale(.85)}
+@media(max-width:620px){.gal-nav{display:none}}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(6,8,11,.92);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 30px 80px -20px #000;animation:lbin .3s ease}
+@keyframes lbin{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.lb-btn{position:absolute;background:rgba(255,255,255,.08);border:1px solid var(--border);color:#fff;width:50px;height:50px;border-radius:50%;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.2s;user-select:none}
+.lb-btn:hover{background:var(--accent);color:#0B0D10;border-color:transparent}
+.lb-close{top:20px;right:22px;width:44px;height:44px;font-size:20px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;font-family:'Space Grotesk'}
+@media(max-width:620px){.lb-prev{left:8px}.lb-next{right:8px}.lb-btn{width:42px;height:42px}}
 .edu{display:flex;flex-direction:column;gap:6px}
 .edu .deg{font-weight:600}
 .edu .sch{color:var(--muted);font-size:14.5px}
@@ -246,11 +290,9 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .pub .ptitle{font-weight:500;flex:1;font-size:15.5px}
 .pub .arrow{color:var(--accent);font-size:20px;transition:.25s;flex:0 0 auto}
 .pub:hover .arrow{transform:translate(4px,-4px)}
-.gh-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:720px){.gh-stats{grid-template-columns:1fr}}
-.gh-stats .frame{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow:hidden}
-.gh-stats img{display:block;width:100%;border-radius:10px}
-.contact{text-align:center;background:linear-gradient(180deg,transparent,rgba(91,140,255,.05));border-top:1px solid var(--border);border-radius:32px 32px 0 0;margin-top:40px;padding-bottom:clamp(76px,9vw,120px)}
+.proj-top .tags{display:flex;gap:8px;align-items:center}
+.tag.new{color:var(--accent-2);border-color:rgba(157,123,255,.35);background:rgba(157,123,255,.1)}
+.contact{text-align:center;background:linear-gradient(180deg,transparent,rgba(91,140,255,.05));border:1px solid var(--border);border-radius:32px;margin-top:40px;margin-bottom:8px;padding-top:clamp(76px,9vw,120px);padding-bottom:clamp(76px,9vw,120px)}
 .contact h2{font-size:clamp(30px,5vw,52px);letter-spacing:-.02em;margin-bottom:18px}
 .contact h2 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .contact p{color:var(--muted);max-width:520px;margin:0 auto 34px;font-size:17px}
@@ -258,7 +300,7 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .social{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;border:1px solid var(--border);background:var(--card);transition:.25s;color:var(--muted)}
 .social:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
 .social svg{width:20px;height:20px}
-footer{text-align:center;padding:36px 20px;color:var(--faint);font-size:13.5px;border-top:1px solid var(--border)}
+footer{text-align:center;padding:36px 20px;color:var(--faint);font-size:13.5px;border-top:1px solid var(--border);margin-top: 40px;}
 footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
 .back-top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:13px;background:var(--card);border:1px solid var(--border);display:grid;place-items:center;cursor:pointer;color:var(--text);opacity:0;pointer-events:none;transition:.3s;z-index:90}
 .back-top.show{opacity:1;pointer-events:auto}
@@ -277,6 +319,7 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#photography">Photos</a>
     <a href="#writing">Writing</a>
     <a href="#contact" class="nav-cta">Let's talk</a>
   </div>
@@ -308,12 +351,12 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   <div class="about-grid">
     <div class="about-card reveal">
       <p>My passion for building user-focused tools began with simple widgets and evolved into creating full-scale apps that solve real problems and enhance everyday life. I'm driven by a constant desire to understand how things work — and how they can be improved.</p>
-      <p>Today I'm a Senior Android Developer at <strong>Appcent</strong>, serving as the primary Android developer on the official <strong>Istanbul Airport</strong> app. My work spans BLE indoor solutions, performance optimization, payment & IAP integrations, and multilingual accessibility. On the side I design, build, and publish my own products.</p>
+      <p>Today I'm a Senior Android Developer at <strong><a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a></strong>, serving as the primary Android developer on the official <strong>Istanbul Airport</strong> app. My work spans BLE indoor solutions, performance optimization, payment & IAP integrations, and multilingual accessibility. On the side I design, build, and publish my own products.</p>
       <p>I thrive in collaborative environments and take pride in being a supportive, reliable team player — a natural problem-fixer who enjoys designing clean solutions and delivering high-quality features.</p>
     </div>
     <div class="about-card reveal">
       <ul class="info-list">
-        <li><span class="ic">💼</span><div><div class="k">Current role</div><div class="v">Senior Android Developer @ Appcent</div></div></li>
+        <li><span class="ic">💼</span><div><div class="k">Current role</div><div class="v">Senior Android Developer @ <a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a></div></div></li>
         <li><span class="ic">📍</span><div><div class="k">Location</div><div class="v">Istanbul, Turkey</div></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><div><div class="k">LinkedIn</div><div class="v"><a href="https://www.linkedin.com/in/mkhakpaki" target="_blank" rel="noopener">in/mkhakpaki</a></div></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span><div><div class="k">GitHub</div><div class="v"><a href="https://github.com/mkhakpaki" target="_blank" rel="noopener">github.com/mkhakpaki</a></div></div></li>
@@ -331,16 +374,16 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   <div class="tech-grid reveal">
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" loading="lazy" width="30" height="30"></span><span class="tn">Kotlin</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" loading="lazy" width="30" height="30"></span><span class="tn">Java</span></div>
-    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" loading="lazy" width="30" height="30"></span><span class="tn">Swift</span></div>
-    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" loading="lazy" width="30" height="30"></span><span class="tn">C#</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" loading="lazy" width="30" height="30"></span><span class="tn">Android</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" loading="lazy" width="30" height="30"></span><span class="tn">Compose</span></div>
-    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" loading="lazy" width="30" height="30"></span><span class="tn">Unity</span></div>
-    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" loading="lazy" width="30" height="30"></span><span class="tn">Firebase</span></div>
-    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="Gradle" loading="lazy" width="30" height="30"></span><span class="tn">Gradle</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" loading="lazy" width="30" height="30"></span><span class="tn">Android Studio</span></div>
+    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="Gradle" loading="lazy" width="30" height="30"></span><span class="tn">Gradle</span></div>
+    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" loading="lazy" width="30" height="30"></span><span class="tn">Firebase</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" loading="lazy" width="30" height="30"></span><span class="tn">SQLite</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" alt="JUnit" loading="lazy" width="30" height="30"></span><span class="tn">JUnit</span></div>
+    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" loading="lazy" width="30" height="30"></span><span class="tn">Unity</span></div>
+    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" loading="lazy" width="30" height="30"></span><span class="tn">C#</span></div>
+    <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" loading="lazy" width="30" height="30"></span><span class="tn">Swift</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy" width="30" height="30"></span><span class="tn">Git</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy" width="30" height="30"></span><span class="tn">GitHub</span></div>
     <div class="tech"><span class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab" loading="lazy" width="30" height="30"></span><span class="tn">GitLab</span></div>
@@ -361,29 +404,6 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   <div class="proj-grid">
 
     <article class="proj reveal">
-      <div class="proj-top"><div class="proj-icon"><img src="https://play-lh.googleusercontent.com/5NR0wzU7KeosVLpfTx6hZN4T1-65dx5oy3GwxRIbyLew2kPIYealSxxmP1hJLB2bcC4L-1XFvlA6pjifKy_VIQ=s128" alt="Jarful app icon" loading="lazy" width="60" height="60"></div><span class="tag live">● Live</span></div>
-      <h3>Jarful</h3>
-      <div class="ptype">Fruit Merge Puzzle · Unity Game</div>
-      <p>A cozy, physics-driven fruit-merge puzzle. Drop and combine fruit to climb the chain — with satisfying merges, juicy feedback, and progressively trickier jars to fill.</p>
-      <div class="proj-tech"><span>Unity</span><span>C#</span><span>Firebase</span><span>Android</span></div>
-      <div class="proj-links">
-        <a class="plink" href="https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge" target="_blank" rel="noopener">▶ Google Play</a>
-      </div>
-    </article>
-
-    <article class="proj reveal">
-      <div class="proj-top"><div class="proj-icon"><img src="https://mkhakpaki.github.io/dodast/icon-192.png" alt="dodast app icon" loading="lazy" width="60" height="60"></div><span class="tag live">● Live</span></div>
-      <h3>dodast</h3>
-      <div class="ptype">Local-First Media Player · Kotlin Multiplatform</div>
-      <p>Plays the music and videos you already own, finds their artwork, and keeps playback in sync across every device in your home — without your library ever leaving your device.</p>
-      <div class="proj-tech"><span>Kotlin Multiplatform</span><span>Compose</span><span>Real-Time Sync</span><span>Networking</span></div>
-      <div class="proj-links">
-        <a class="plink" href="https://play.google.com/store/apps/details?id=com.mkhakpaki.dodast" target="_blank" rel="noopener">▶ Google Play</a>
-        <a class="plink sec" href="https://mkhakpaki.github.io/dodast/" target="_blank" rel="noopener">Website ↗</a>
-      </div>
-    </article>
-
-    <article class="proj reveal">
       <div class="proj-top"><div class="proj-icon"><img src="https://play-lh.googleusercontent.com/XI-M-2aXFSpcbH8Gg8UUeoFg6q57cw4NOCtI_Z3fUFpJzftUeBDESSvbjCyN4CeBj-nJ2iy80CCsBZlr3-nX=s128" alt="Mediqation app icon" loading="lazy" width="60" height="60"></div><span class="tag live">● Live</span></div>
       <h3>Mediqation</h3>
       <div class="ptype">Pill Reminder · Solo Android App</div>
@@ -391,7 +411,30 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
       <p>A lightweight, fully offline app (under 10&nbsp;MB) that helps users manage and track medication schedules. Built solo in Kotlin with MVVM & Room, flexible reminders with snooze, and local notifications that work without internet.</p>
       <div class="proj-tech"><span>Kotlin</span><span>MVVM</span><span>Room</span><span>Jetpack</span><span>Firebase</span></div>
       <div class="proj-links">
-        <a class="plink" href="https://play.google.com/store/apps/details?id=com.mediqation.android" target="_blank" rel="noopener">▶ Google Play</a>
+        <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.mediqation.android" target="_blank" rel="noopener" aria-label="Get Mediqation on Google Play"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="134" height="52" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <div class="proj-top"><div class="proj-icon"><img src="https://mkhakpaki.github.io/dodast/icon-192.png" alt="dodast app icon" loading="lazy" width="60" height="60"></div><div class="tags"><span class="tag new">✦ New</span><span class="tag live">● Live</span></div></div>
+      <h3>dodast</h3>
+      <div class="ptype">Local-First Media Player · Kotlin Multiplatform</div>
+      <p>Plays the music and videos you already own, finds their artwork, and keeps playback in sync across every device in your home — without your library ever leaving your device.</p>
+      <div class="proj-tech"><span>Kotlin Multiplatform</span><span>Compose</span><span>Real-Time Sync</span><span>Networking</span></div>
+      <div class="proj-links">
+        <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.mkhakpaki.dodast" target="_blank" rel="noopener" aria-label="Get dodast on Google Play"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="134" height="52" loading="lazy"></a>
+        <a class="plink sec" href="https://mkhakpaki.github.io/dodast/" target="_blank" rel="noopener">Website ↗</a>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <div class="proj-top"><div class="proj-icon"><img src="https://play-lh.googleusercontent.com/5NR0wzU7KeosVLpfTx6hZN4T1-65dx5oy3GwxRIbyLew2kPIYealSxxmP1hJLB2bcC4L-1XFvlA6pjifKy_VIQ=s128" alt="Jarful app icon" loading="lazy" width="60" height="60"></div><div class="tags"><span class="tag new">✦ New</span><span class="tag live">● Live</span></div></div>
+      <h3>Jarful</h3>
+      <div class="ptype">Fruit Merge Puzzle · Unity Game</div>
+      <p>A cozy, physics-driven fruit-merge puzzle. Drop and combine fruit to climb the chain — with satisfying merges, juicy feedback, and progressively trickier jars to fill.</p>
+      <div class="proj-tech"><span>Unity</span><span>C#</span><span>Firebase</span><span>Android</span></div>
+      <div class="proj-links">
+        <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge" target="_blank" rel="noopener" aria-label="Get Jarful on Google Play"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="134" height="52" loading="lazy"></a>
       </div>
     </article>
 
@@ -407,7 +450,8 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   <div class="flagship reveal">
     <span class="flagship-badge">✈ Flagship Project</span>
     <h3>Istanbul Airport App</h3>
-    <div class="fmeta">Primary Android Developer · Appcent · May 2023 – Present</div>
+    <div class="fmeta">Primary Android Developer · <a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a> · May 2023 – Present</div>
+    <div class="proj-stats" style="margin-bottom:18px"><span class="rs">★ 4.4</span><span class="sep">·</span><span><b>500K+</b> downloads</span><span class="sep">·</span><span><b>2.65K</b> reviews</span></div>
     <p>Primary Android developer on the official app for one of the world's busiest airports — collaborating with design and business teams to translate real passenger needs into well-crafted, scalable features.</p>
     <div class="flag-feats">
       <div class="flag-feat"><div class="ft">🧭 Track My Children</div><div class="fd">Led development of real-time indoor child tracking using BLE and iTags — monitoring distance from the phone.</div></div>
@@ -415,12 +459,15 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
       <div class="flag-feat"><div class="ft">🚙 Buggy Management</div><div class="fd">Created an internal app to manage airport buggy vehicles and validate services via QR-code scanning.</div></div>
       <div class="flag-feat"><div class="ft">📉 Stability & OKRs</div><div class="fd">Cut crash rates via QA + Firebase Crashlytics, and coached a 9-person team to 80% goal completion — top team that cycle.</div></div>
     </div>
+    <div class="proj-links" style="margin-top:22px">
+      <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.igasystem.iga" target="_blank" rel="noopener" aria-label="Get the Istanbul Airport app on Google Play"><img src="assets/google-play-badge.png" alt="Get it on Google Play" width="134" height="52" loading="lazy"></a>
+    </div>
   </div>
 
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
-      <div class="tl-head"><h3>Senior Android Developer</h3><span class="tl-co">· Appcent</span><span class="tl-loc">Istanbul</span><span class="tl-date">May 2023 – Present</span></div>
+      <div class="tl-head"><h3>Senior Android Developer</h3><span class="tl-co">· <a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a></span><span class="tl-loc">Istanbul</span><span class="tl-date">May 2023 – Present</span></div>
       <p>Primary Android developer for the <span class="ia">Istanbul Airport</span> mobile application.</p>
       <ul>
         <li>Translated user needs into well-crafted, scalable Android features with design & business teams.</li>
@@ -432,7 +479,7 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
     </div>
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
-      <div class="tl-head"><h3>Android Developer</h3><span class="tl-co">· PoiLabs</span><span class="tl-loc">Istanbul</span><span class="tl-date">May 2021 – May 2023</span></div>
+      <div class="tl-head"><h3>Android Developer</h3><span class="tl-co">· <a class="colink" href="https://www.poilabs.com/en/" target="_blank" rel="noopener">PoiLabs</a></span><span class="tl-loc">Istanbul</span><span class="tl-date">May 2021 – May 2023</span></div>
       <p>Android SDK & R&D for indoor navigation and IoT.</p>
       <ul>
         <li>Designed a CI/CD pipeline on Azure DevOps, cutting release overhead with automated beta deployments.</li>
@@ -455,16 +502,8 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   </div>
 </section>
 
-<section class="wrap" id="education">
+<section class="wrap" id="personal">
   <div class="two-col">
-    <div class="mini-card reveal">
-      <h3><span>🎓</span>Education</h3>
-      <div class="edu">
-        <span class="deg">Bachelor's Degree, Information Technology</span>
-        <span class="sch">Azarbaijan Shahid Madani University · Tabriz, Iran</span>
-        <span class="dt">Sep 2013 – Oct 2017</span>
-      </div>
-    </div>
     <div class="mini-card reveal">
       <h3><span>🗣️</span>Languages</h3>
       <div class="lang-list">
@@ -474,7 +513,57 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
         <div class="lang-row"><span class="ln">Persian</span><span class="lv">Native</span></div>
       </div>
     </div>
+    <div class="mini-card reveal oc-card">
+      <div>
+        <h3><span>🎨</span>Off the clock</h3>
+        <p class="mc-text">Turns out I'm happiest making things with my hands. A photo that finally catches the light. An espresso pulled just right. A pizza dough I've spent years quietly perfecting. Different crafts, same itch — keep chasing it until it feels right.</p>
+        <div class="chips" style="margin-top:16px"><span class="chip">📷 Photography</span><span class="chip">☕ Espresso</span><span class="chip">🍕 Homemade pizza</span></div>
+      </div>
+      <img class="oc-thumb" src="photos/espresso.jpg" alt="Latte art espresso — one of my coffee pours" loading="lazy">
+    </div>
   </div>
+</section>
+
+<section class="wrap" id="photography">
+  <div class="reveal"><span class="eyebrow">Photography</span></div>
+  <h2 class="section-title reveal">Through my lens</h2>
+  <p class="section-sub reveal">Istanbul got under my skin and never left. On my days off you'll find me wandering it with nothing but the phone in my pocket — chasing golden hour on the Bosphorus, getting lost in old streets, and stopping dead whenever the light does something worth keeping. No fancy gear, no plan. Just a city I can't stop looking at.</p>
+  <div class="gallery-wrap reveal">
+    <button class="gal-nav gal-prev" id="galPrev" aria-label="Scroll left">‹</button>
+    <div class="gallery" id="gallery">
+    <figure><img src="photos/ph22.jpg" loading="lazy" width="1105" height="1382" alt="Underside of the Bosphorus Bridge by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph23.jpg" loading="lazy" width="1120" height="1400" alt="Historic spiral staircase, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph01.jpg" loading="lazy" width="1080" height="732" alt="Maiden's Tower, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph10.jpg" loading="lazy" width="1080" height="1350" alt="Spice Bazaar arches, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph03.jpg" loading="lazy" width="1321" height="1400" alt="Ortakoy Mosque and the Bosphorus Bridge, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph02.jpg" loading="lazy" width="1400" height="1050" alt="Hagia Sophia and fountain, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph04.jpg" loading="lazy" width="1392" height="1400" alt="Fisherman silhouette at sunset on the Bosphorus by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph05.jpg" loading="lazy" width="788" height="1400" alt="Nostalgic red tram on Istiklal Street, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph06.jpg" loading="lazy" width="1053" height="1317" alt="Galata Tower square, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph07.jpg" loading="lazy" width="1400" height="1090" alt="Dolmabahce Palace gate, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph08.jpg" loading="lazy" width="1400" height="1050" alt="Colourful waterfront houses and boats, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph09.jpg" loading="lazy" width="1290" height="1400" alt="Rumeli Fortress, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph11.jpg" loading="lazy" width="1120" height="1400" alt="Dolmabahce clock tower and mosque, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph12.jpg" loading="lazy" width="1400" height="1050" alt="Maiden's Tower at sunset, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph13.jpg" loading="lazy" width="1400" height="1050" alt="Istanbul skyline at night across the water by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph14.jpg" loading="lazy" width="1400" height="1050" alt="The Bosphorus seen from the hills, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph15.jpg" loading="lazy" width="1400" height="957" alt="The Bosphorus through the trees, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph16.jpg" loading="lazy" width="1120" height="1400" alt="Obelisk of Theodosius, Sultanahmet, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph17.jpg" loading="lazy" width="788" height="1400" alt="German Fountain, Sultanahmet, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph18.jpg" loading="lazy" width="1400" height="1050" alt="Sunset over the sea, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph19.jpg" loading="lazy" width="1400" height="1399" alt="Autumn tree-lined road, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph20.jpg" loading="lazy" width="788" height="1400" alt="Ivy-covered archway and fountain, Istanbul by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph24.jpg" loading="lazy" width="1400" height="1400" alt="Waterfall and wisteria over a green pool, Turkey by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph25.jpg" loading="lazy" width="1120" height="1400" alt="Red berries, macro nature photography by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph26.jpg" loading="lazy" width="1120" height="1400" alt="Dew drops on a leaf, macro photography by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph27.jpg" loading="lazy" width="788" height="1400" alt="Almond blossom in spring, macro photography by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph28.jpg" loading="lazy" width="1080" height="1350" alt="Hiker silhouette on a mountain, black and white by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph29.jpg" loading="lazy" width="788" height="1400" alt="Golestan Palace tiled doorway, Iran by Mohammad Khakpaki"></figure>
+    <figure><img src="photos/ph30.jpg" loading="lazy" width="788" height="1400" alt="Symmetric tiled vaulted ceiling, Iran by Mohammad Khakpaki"></figure>
+    </div>
+    <button class="gal-nav gal-next" id="galNext" aria-label="Scroll right">›</button>
+  </div>
+  <div style="margin-top:10px"><a class="plink sec" href="https://www.instagram.com/mkhakpaki/" target="_blank" rel="noopener">See more on Instagram ↗</a></div>
 </section>
 
 <section id="writing" class="wrap">
@@ -490,15 +579,6 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
   </div>
 </section>
 
-<section class="wrap">
-  <div class="reveal"><span class="eyebrow">GitHub</span></div>
-  <h2 class="section-title reveal">By the numbers</h2>
-  <p class="section-sub reveal">Live stats straight from my GitHub profile.</p>
-  <div class="gh-stats reveal">
-    <div class="frame"><img src="https://github.com/mkhakpaki/mkhakpaki/blob/main/profile/stats.svg?raw=true" alt="Mohammad Khakpaki GitHub statistics" loading="lazy"></div>
-    <div class="frame"><img src="https://github.com/mkhakpaki/mkhakpaki/blob/main/profile/top-langs.svg?raw=true" alt="Mohammad Khakpaki most-used programming languages" loading="lazy"></div>
-  </div>
-</section>
 </main>
 
 <section id="contact" class="contact wrap">
@@ -524,6 +604,14 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
 
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
 <script>
 const nav=document.getElementById('nav'),backTop=document.getElementById('backTop');
 addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('scrolled',y>20);backTop.classList.toggle('show',y>600);});
@@ -534,6 +622,36 @@ navLinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navLinks.classList.remov
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%6*60)+'ms';io.observe(el);});
 document.querySelectorAll('.proj').forEach(p=>{p.addEventListener('pointermove',e=>{const r=p.getBoundingClientRect();p.style.setProperty('--mx',(e.clientX-r.left)+'px');p.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+// gallery slider arrows
+(function(){
+  const g=document.getElementById('gallery');if(!g)return;
+  const step=()=>Math.max(g.clientWidth*.8,320);
+  const p=document.getElementById('galPrev'),n=document.getElementById('galNext');
+  if(p)p.onclick=()=>g.scrollBy({left:-step(),behavior:'smooth'});
+  if(n)n.onclick=()=>g.scrollBy({left:step(),behavior:'smooth'});
+  function upd(){const max=g.scrollWidth-g.clientWidth;
+    if(p)p.classList.toggle('gal-hidden',g.scrollLeft<=4);
+    if(n)n.classList.toggle('gal-hidden',g.scrollLeft>=max-4);}
+  // (proximity snap keeps the true end reachable so max detection is reliable)
+  g.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);
+  [...g.querySelectorAll('img')].forEach(im=>im.addEventListener('load',upd));
+  upd();
+})();
+// lightbox gallery
+(function(){
+  const imgs=[...document.querySelectorAll('#gallery img')];
+  const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCount=document.getElementById('lbCount');
+  let cur=0;
+  function show(i){cur=(i+imgs.length)%imgs.length;lbImg.src=imgs[cur].src;lbImg.alt=imgs[cur].alt;lbCount.textContent=(cur+1)+' / '+imgs.length;}
+  function open(i){show(i);lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  imgs.forEach((im,i)=>im.addEventListener('click',()=>open(i)));
+  document.getElementById('lbClose').onclick=close;
+  document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();show(cur-1);};
+  document.getElementById('lbNext').onclick=e=>{e.stopPropagation();show(cur+1);};
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
 const roles=['Senior Android Developer','Kotlin Craftsman','Istanbul Airport App','BLE & IoT Engineer','Indie App Maker'];
 const typedEl=document.getElementById('typed');let ri=0,ci=0,del=false;
 function tick(){const w=roles[ri];typedEl.textContent=w.slice(0,ci);
