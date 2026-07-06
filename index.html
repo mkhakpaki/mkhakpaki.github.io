@@ -13,18 +13,28 @@
 <link rel="canonical" href="https://mkhakpaki.github.io/">
 <meta name="theme-color" content="#0B0D10">
 
+<!-- Favicons (MKH mark) -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/mkh-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/mkh-favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/mkh-favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/mkh-favicon-180.png">
+
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Mohammad Khakpaki — Senior Android Developer (Kotlin)">
 <meta property="og:description" content="Senior Android Developer in Istanbul. 10+ years in Kotlin, Jetpack Compose & BLE. Primary developer on the Istanbul Airport app; creator of Jarful, dodast & Mediqation.">
 <meta property="og:url" content="https://mkhakpaki.github.io/">
 <meta property="og:site_name" content="Mohammad Khakpaki">
-<meta property="og:image" content="https://mkhakpaki.github.io/dodast/icon-192.png">
+<meta property="og:image" content="https://mkhakpaki.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mohammad Khakpaki — Senior Android Developer, Istanbul">
 <meta property="profile:first_name" content="Mohammad">
 <meta property="profile:last_name" content="Khakpaki">
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mkhakpaki.github.io/assets/og-card.png">
 <meta name="twitter:title" content="Mohammad Khakpaki — Senior Android Developer (Kotlin)">
 <meta name="twitter:description" content="Senior Android Developer in Istanbul. Primary developer on the Istanbul Airport app; creator of Jarful, dodast & Mediqation on Google Play.">
 
@@ -41,7 +51,7 @@
   "jobTitle": "Senior Android Developer",
   "description": "Mobile application developer with 10+ years building apps (5+ years focused on Android with Kotlin). Primary Android developer on the Istanbul Airport app.",
   "url": "https://mkhakpaki.github.io/",
-  "image": "https://mkhakpaki.github.io/dodast/icon-192.png",
+  "image": "https://mkhakpaki.github.io/assets/portrait.jpg",
   "email": "mailto:mohamad.khakpaki@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -62,6 +72,7 @@
     "https://www.linkedin.com/in/mkhakpaki",
     "https://github.com/mkhakpaki",
     "https://medium.com/@mkhakpaki",
+    "https://www.instagram.com/mkhakpaki/",
     "https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge",
     "https://play.google.com/store/apps/details?id=com.mkhakpaki.dodast",
     "https://play.google.com/store/apps/details?id=com.mediqation.android"
@@ -76,7 +87,8 @@
   "itemListElement": [
     {"@type": "SoftwareApplication", "name": "Mediqation — Pill Reminder", "applicationCategory": "HealthApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.5","bestRating":"5"}, "url": "https://play.google.com/store/apps/details?id=com.mediqation.android"},
     {"@type": "SoftwareApplication", "name": "dodast", "applicationCategory": "MultimediaApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.dodast"},
-    {"@type": "SoftwareApplication", "name": "Jarful: Fruit Merge Puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge"}
+    {"@type": "SoftwareApplication", "name": "Jarful: Fruit Merge Puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Android", "author": {"@type":"Person","name":"Mohammad Khakpaki"}, "url": "https://play.google.com/store/apps/details?id=com.mkhakpaki.fruitmerge"},
+    {"@type": "SoftwareApplication", "name": "İstanbul Airport", "applicationCategory": "TravelApplication", "operatingSystem": "Android", "contributor": {"@type":"Person","name":"Mohammad Khakpaki"}, "aggregateRating": {"@type":"AggregateRating","ratingValue":"3.7","reviewCount":"2650","bestRating":"5"}, "url": "https://play.google.com/store/apps/details?id=com.igasystem.iga"}
   ]
 }
 </script>
@@ -84,7 +96,7 @@
 <style>
 :root{
   --bg:#0B0D10;--bg-soft:#12151b;--card:#161a22;--card-hover:#1c212b;--border:#232936;
-  --text:#e7ecf3;--muted:#9aa6b8;--faint:#6b7688;
+  --text:#e7ecf3;--muted:#9aa6b8;--faint:#8b96a8;
   --accent:#5B8CFF;--accent-2:#9d7bff;--accent-3:#38e0c4;
   --grad:linear-gradient(120deg,#5B8CFF 0%,#9d7bff 50%,#38e0c4 100%);
   --glow:rgba(91,140,255,.35);--shadow:0 20px 50px -20px rgba(0,0,0,.7);--r:18px;
@@ -104,8 +116,10 @@ a{color:inherit;text-decoration:none}
 .grid-overlay{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.15;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,60px);backdrop-filter:blur(14px);background:rgba(11,13,16,.55);border-bottom:1px solid transparent;transition:.35s}
 nav.scrolled{background:rgba(11,13,16,.82);border-bottom-color:var(--border)}
-.brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px;white-space:nowrap}
 .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px var(--glow)}
+.brand .mkh{font-family:ui-monospace,'Cascadia Code','JetBrains Mono',Consolas,monospace;font-weight:700;font-size:15px;letter-spacing:.5px;color:var(--accent);font-style:normal}
+.brand .mkh i{color:var(--text);font-style:normal;margin:0 3px}
 .nav-links{display:flex;gap:6px;align-items:center}
 .nav-links a{padding:8px 14px;border-radius:10px;font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
 .nav-links a:hover{color:var(--text);background:var(--card)}
@@ -156,6 +170,7 @@ section{padding:clamp(58px,7vw,96px) 0;position:relative}
 .about-card p{color:var(--muted);margin-bottom:16px}
 .about-card p:last-child{margin-bottom:0}
 .about-card strong{color:var(--text)}
+.about-portrait{display:block;width:128px;height:128px;border-radius:50%;object-fit:cover;margin:0 auto 24px;border:3px solid rgba(91,140,255,.45);box-shadow:0 10px 28px -10px rgba(0,0,0,.7)}
 .info-list{list-style:none;display:flex;flex-direction:column;gap:16px}
 .info-list li{display:flex;gap:14px;align-items:center}
 .info-list .ic{width:38px;height:38px;flex:0 0 38px;border-radius:11px;display:grid;place-items:center;background:rgba(91,140,255,.12);font-size:18px}
@@ -312,7 +327,7 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
 <div class="grid-overlay"></div>
 
 <nav id="nav">
-  <a href="#top" class="brand"><span class="dot"></span>Mohammad Khakpaki</a>
+  <a href="#top" class="brand"><span class="mkh">[<i>MKH</i>]</span>Mohammad Khakpaki</a>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
@@ -329,7 +344,7 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
 <header class="hero wrap">
   <div class="hero-badge reveal"><span class="pulse"></span>Senior Android Developer · Open to new ideas</div>
   <h1 class="reveal">Hi, I'm <span class="grad">Mohammad</span> 👋</h1>
-  <div class="role reveal" aria-label="Roles"><span class="type" id="typed"></span><span class="caret"></span></div>
+  <div class="role reveal" aria-label="Roles"><span class="type" id="typed"></span><noscript>Senior Android Developer</noscript><span class="caret"></span></div>
   <p class="lead reveal">Senior Android Developer in Istanbul with <strong style="color:var(--text)">10+ years</strong> building user-focused mobile apps — the last several deep in Kotlin & Android. Primary developer on the <strong style="color:var(--text)">Istanbul Airport</strong> app, with 15+ shipped apps behind me — and an indie maker who publishes his own products on Google Play. A natural problem-fixer who turns complexity into clean, high-quality solutions.</p>
   <div class="hero-cta reveal">
     <a href="#projects" class="btn btn-primary">View my work →</a>
@@ -355,12 +370,13 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
       <p>I thrive in collaborative environments and take pride in being a supportive, reliable team player — a natural problem-fixer who enjoys designing clean solutions and delivering high-quality features.</p>
     </div>
     <div class="about-card reveal">
+      <img class="about-portrait" src="assets/portrait.jpg" alt="Portrait of Mohammad Khakpaki" width="128" height="128" loading="lazy">
       <ul class="info-list">
-        <li><span class="ic">💼</span><div><div class="k">Current role</div><div class="v">Senior Android Developer @ <a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a></div></div></li>
-        <li><span class="ic">📍</span><div><div class="k">Location</div><div class="v">Istanbul, Turkey</div></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z"/></svg></span><div><div class="k">Current role</div><div class="v">Senior Android Developer @ <a class="colink" href="https://appcent.mobi/" target="_blank" rel="noopener">Appcent</a></div></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span><div><div class="k">Location</div><div class="v">Istanbul, Turkey</div></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><div><div class="k">LinkedIn</div><div class="v"><a href="https://www.linkedin.com/in/mkhakpaki" target="_blank" rel="noopener">in/mkhakpaki</a></div></div></li>
         <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span><div><div class="k">GitHub</div><div class="v"><a href="https://github.com/mkhakpaki" target="_blank" rel="noopener">github.com/mkhakpaki</a></div></div></li>
-        <li><span class="ic">🗣️</span><div><div class="k">Languages</div><div class="v">English, Turkish, Azerbaijani, Persian</div></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></span><div><div class="k">Languages</div><div class="v">English, Turkish, Azerbaijani, Persian</div></div></li>
       </ul>
     </div>
   </div>
@@ -598,7 +614,7 @@ footer .brand{justify-content:center;margin-bottom:10px;font-size:16px}
 </section>
 
 <footer>
-  <div class="brand" style="display:flex"><span class="dot"></span>Mohammad Khakpaki</div>
+  <div class="brand" style="display:flex;justify-content:center"><span class="mkh">[<i>MKH</i>]</span>Mohammad Khakpaki</div>
   <div>Senior Android Developer · Istanbul, Turkey · Built with care 💙</div>
 </footer>
 
