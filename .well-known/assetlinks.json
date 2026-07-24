@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mkhakpaki.dodast",
+      "sha256_cert_fingerprints": [
+        "1E:DB:F5:75:6C:E7:4E:71:C2:F1:2A:CB:F7:49:A1:5D:E3:7E:D2:83:9E:51:9B:10:09:30:62:18:A1:A7:E6:CE"
+      ]
+    }
+  }
+]

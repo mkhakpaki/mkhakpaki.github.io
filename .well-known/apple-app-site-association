@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "653W454YQD.com.mkhakpaki.dodast.iosApp",
+        "appIDs": ["653W454YQD.com.mkhakpaki.dodast.iosApp"],
+        "paths": ["/dodast/join*"],
+        "components": [
+          {
+            "/": "/dodast/join*",
+            "comment": "Open dodast session-join links in the app; everything else stays in the browser."
+          }
+        ]
+      }
+    ]
+  }
+}
